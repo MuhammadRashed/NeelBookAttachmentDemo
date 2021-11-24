@@ -37,6 +37,7 @@ namespace Demo4
         typeof(LeptonThemeManagementDomainModule),
         typeof(LanguageManagementDomainModule),
         typeof(AbpEmailingModule),
+        typeof(NeelbookAttachment.NeelbookAttachmentDomainModule),
         typeof(BlobStoringDatabaseDomainModule)
         )]
     public class Demo4DomainModule : AbpModule

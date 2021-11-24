@@ -26,6 +26,7 @@ namespace Demo4
         typeof(AbpAccountAdminApplicationContractsModule),
         typeof(LanguageManagementApplicationContractsModule),
         typeof(LeptonThemeManagementApplicationContractsModule),
+        typeof(NeelbookAttachment.NeelbookAttachmentApplicationContractsModule),
         typeof(TextTemplateManagementApplicationContractsModule)
     )]
     public class Demo4ApplicationContractsModule : AbpModule

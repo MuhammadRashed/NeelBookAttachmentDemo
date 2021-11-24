@@ -6089,6 +6089,13 @@ needle@^2.5.2:
     iconv-lite "^0.4.4"
     sax "^1.2.4"
 
+neelbook-attachment@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/neelbook-attachment/-/neelbook-attachment-0.0.1.tgz#81ec63c36db477d5f613997993b474868c5a1d83"
+  integrity sha512-1eoNBbE8qEpcm4HkjmQQPZnPkd+M8LoNs+lgNp3HrnT5PuUErB2p66mVgCKOPgttYihCUcpDzAwVP/4iipHfbg==
+  dependencies:
+    tslib "^2.1.0"
+
 negotiator@0.6.2:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.2.tgz#feacf7ccf525a77ae9634436a64883ffeca346fb"

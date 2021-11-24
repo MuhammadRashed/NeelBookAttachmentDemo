@@ -17,6 +17,7 @@ using Volo.Saas.EntityFrameworkCore;
 using Volo.Saas.Editions;
 using Volo.Saas.Tenants;
 using Volo.Payment.EntityFrameworkCore;
+using NeelbookAttachment.EntityFrameworkCore;
 
 namespace Demo4.EntityFrameworkCore
 {
@@ -82,6 +83,7 @@ namespace Demo4.EntityFrameworkCore
             builder.ConfigureSaas();
             builder.ConfigureTextTemplateManagement();
             builder.ConfigureBlobStoring();
+            builder.ConfigureNeelbookAttachment();
 
             /* Configure your own tables/entities inside here */
 

@@ -29,6 +29,7 @@ namespace Demo4.EntityFrameworkCore
         typeof(LanguageManagementEntityFrameworkCoreModule),
         typeof(SaasEntityFrameworkCoreModule),
         typeof(TextTemplateManagementEntityFrameworkCoreModule),
+        typeof(NeelbookAttachment.EntityFrameworkCore.NeelbookAttachmentEntityFrameworkCoreModule),
         typeof(BlobStoringDatabaseEntityFrameworkCoreModule)
         )]
     public class Demo4EntityFrameworkCoreModule : AbpModule

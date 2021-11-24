@@ -29,6 +29,7 @@ namespace Demo4
         typeof(LanguageManagementHttpApiModule),
         typeof(SaasHostHttpApiModule),
         typeof(LeptonThemeManagementHttpApiModule),
+        typeof(NeelbookAttachment.NeelbookAttachmentHttpApiModule),
         typeof(TextTemplateManagementHttpApiModule)
         )]
     public class Demo4HttpApiModule : AbpModule

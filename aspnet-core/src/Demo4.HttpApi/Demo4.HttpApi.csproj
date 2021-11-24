@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="NeelbookAttachment.HttpApi" Version="0.1.0" />
     <PackageReference Include="Volo.Abp.PermissionManagement.HttpApi" Version="4.4.4" />
     <PackageReference Include="Volo.Abp.FeatureManagement.HttpApi" Version="4.4.4" />
     <PackageReference Include="Volo.Abp.SettingManagement.HttpApi" Version="4.4.4" />

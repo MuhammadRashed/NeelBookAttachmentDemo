@@ -35,6 +35,7 @@ namespace Demo4
         typeof(VoloAbpCommercialSuiteTemplatesModule),
         typeof(LeptonThemeManagementDomainSharedModule),
         typeof(AbpGlobalFeaturesModule),
+        typeof(NeelbookAttachment.NeelbookAttachmentDomainSharedModule),
         typeof(BlobStoringDatabaseDomainSharedModule)
         )]
     public class Demo4DomainSharedModule : AbpModule
