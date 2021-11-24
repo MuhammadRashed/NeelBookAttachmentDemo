@@ -16,6 +16,11 @@ namespace Demo4.Permissions
 
             //Define your own permissions here. Example:
             //myGroup.AddPermission(Demo4Permissions.MyPermission1, L("Permission:MyPermission1"));
+
+            var employeePermission = myGroup.AddPermission(Demo4Permissions.Employees.Default, L("Permission:Employees"));
+            employeePermission.AddChild(Demo4Permissions.Employees.Create, L("Permission:Create"));
+            employeePermission.AddChild(Demo4Permissions.Employees.Edit, L("Permission:Edit"));
+            employeePermission.AddChild(Demo4Permissions.Employees.Delete, L("Permission:Delete"));
         }
 
         private static LocalizableString L(string name)

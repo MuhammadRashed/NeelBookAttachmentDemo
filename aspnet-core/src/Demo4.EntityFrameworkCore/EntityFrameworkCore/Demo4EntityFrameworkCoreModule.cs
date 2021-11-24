@@ -1,3 +1,4 @@
+using Demo4.Employees;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
@@ -46,6 +47,8 @@ namespace Demo4.EntityFrameworkCore
                 /* Remove "includeAllEntities: true" to create
                  * default repositories only for aggregate roots */
                 options.AddDefaultRepositories(includeAllEntities: true);
+                options.AddRepository<Employee, Employees.EfCoreEmployeeRepository>();
+
             });
 
             Configure<AbpDbContextOptions>(options =>

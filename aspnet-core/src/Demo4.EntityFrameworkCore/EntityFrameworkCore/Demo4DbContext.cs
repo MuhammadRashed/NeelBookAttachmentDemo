@@ -1,3 +1,5 @@
+using Demo4.Employees;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
@@ -24,15 +26,16 @@ namespace Demo4.EntityFrameworkCore
     [ReplaceDbContext(typeof(IIdentityProDbContext))]
     [ReplaceDbContext(typeof(ISaasDbContext))]
     [ConnectionStringName("Default")]
-    public class Demo4DbContext : 
-        AbpDbContext<Demo4DbContext>, 
+    public class Demo4DbContext :
+        AbpDbContext<Demo4DbContext>,
         IIdentityProDbContext,
         ISaasDbContext
     {
+        public DbSet<Employee> Employees { get; set; }
         /* Add DbSet properties for your Aggregate Roots / Entities here. */
-        
+
         #region Entities from the modules
-        
+
         /* Notice: We only implemented IIdentityProDbContext and ISaasDbContext
          * and replaced them for this DbContext. This allows you to perform JOIN
          * queries for the entities of these modules over the repositories easily. You
@@ -43,7 +46,7 @@ namespace Demo4.EntityFrameworkCore
          * More info: Replacing a DbContext of a module ensures that the related module
          * uses this DbContext on runtime. Otherwise, it will use its own DbContext class.
          */
-        
+
         // Identity
         public DbSet<IdentityUser> Users { get; set; }
         public DbSet<IdentityRole> Roles { get; set; }
@@ -51,12 +54,12 @@ namespace Demo4.EntityFrameworkCore
         public DbSet<OrganizationUnit> OrganizationUnits { get; set; }
         public DbSet<IdentitySecurityLog> SecurityLogs { get; set; }
         public DbSet<IdentityLinkUser> LinkUsers { get; set; }
-        
+
         // SaaS
         public DbSet<Tenant> Tenants { get; set; }
         public DbSet<Edition> Editions { get; set; }
         public DbSet<TenantConnectionString> TenantConnectionStrings { get; set; }
-        
+
         #endregion
 
         public Demo4DbContext(DbContextOptions<Demo4DbContext> options)
@@ -93,6 +96,17 @@ namespace Demo4.EntityFrameworkCore
             //    b.ConfigureByConvention(); //auto configure for the base class props
             //    //...
             //});
+            if (builder.IsHostDatabase())
+            {
+                builder.Entity<Employee>(b =>
+    {
+        b.ToTable(Demo4Consts.DbTablePrefix + "Employees", Demo4Consts.DbSchema);
+        b.ConfigureByConvention();
+        b.Property(x => x.Name).HasColumnName(nameof(Employee.Name));
+        b.Property(x => x.AttachmentId).HasColumnName(nameof(Employee.AttachmentId));
+    });
+
+            }
         }
     }
 }
